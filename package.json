@@ -1,0 +1,32 @@
+{
+  "name": "sequelize-automatic-migrations",
+  "version": "1.0.0",
+  "description": "Sequelize automatic migration file generator ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexHladin/sequelize-automatic-migrations.git"
+  },
+  "keywords": [
+    "sequelize"
+  ],
+  "author": "Alex Gladin <alexgladin17@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexHladin/sequelize-automatic-migrations/issues"
+  },
+  "homepage": "https://github.com/AlexHladin/sequelize-automatic-migrations",
+  "bin": {
+    "sequelize-automatic-migrations": "./bin/main.js"
+  },
+  "dependencies": {
+    "ect": "^0.5.9",
+    "pg": "^4.4.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.17.1",
+    "yargs": "^11.0.0"
+  }
+}

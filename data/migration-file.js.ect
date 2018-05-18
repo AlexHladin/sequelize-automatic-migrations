@@ -1,0 +1,40 @@
+'use strict';
+
+module.exports = {
+  up: function (queryInterface, Sequelize) {
+    return queryInterface.createTable('<%- @model.tableName %>', {
+<% for field in @model.fields : %>
+      <%- field.name %>: {
+        type: Sequelize.<%- field.type %><%- field.values  %><%- field.length %><%- '.UNSIGNED' if field.unsigned %>,
+<% if field.references?.model : %>
+        references: <%- JSON.stringify field.references %>,
+<% end %>
+<% for opt in @fieldOpts : %>
+<% if not field[opt].isEmpty() : %>
+        <%- opt %> : <%- field[opt] %>,
+<% end %>
+<% end %>
+      },
+
+<% end %>
+    })<% if ( Object.keys @model.uniqueKeys ).length : %>
+<% for keyName, keyOpts of @model.uniqueKeys : %>
+
+    .then(function() {
+      return queryInterface.addIndex(
+        '<%- @model.tableName %>',
+        <%- JSON.stringify keyOpts.fields %>,
+        {
+          indexName: '<%- keyName %>',
+          indicesType: 'UNIQUE'
+        }
+      )
+<% end %>
+    })<% end %>;
+  },
+
+  down: function (queryInterface, Sequelize) {
+    return queryInterface.dropTable('<%- @model.tableName %>');
+  }
+};
+
