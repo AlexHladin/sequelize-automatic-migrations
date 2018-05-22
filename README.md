@@ -7,11 +7,6 @@ npm i --save-dev sequelize-automatic-migrations
 ```
 
 ## Usage
-```
-sequelize-automatic-migrations <sequelize_models_directory> <output_migration_directory>
-```
-
-## Usage
 
     sequelize-automatic-migrations -c [/path/to/config] -e [environment name] -d [/path/to/models] -i [/path/to/migrations] -m [model-name]
 
