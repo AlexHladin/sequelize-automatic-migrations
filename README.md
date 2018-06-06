@@ -1,11 +1,15 @@
 # sequelize-automatic-migrations
 Simple utility to automatically generate and manage sequelize migrations
 
-### Installaion
+### Local installation
 ```
 npm i --save-dev sequelize-automatic-migrations
 ```
 
+### Global installation
+```
+npm i -g sequelize-automatic-migrations
+```
 ## Usage
 
     sequelize-automatic-migrations -c [/path/to/config] -e [environment name] -d [/path/to/models] -i [/path/to/migrations] -m [model-name]
@@ -16,6 +20,10 @@ npm i --save-dev sequelize-automatic-migrations
       -d, --models-directory       Path to models directory
       -i, --migrations-directory   Path to migrations directory
       -m, --model-name             Model name
+      
+## Local usage
+    
+    node_modules/.bin/sequelize-automatic-migrations -c [/path/to/config] -e [environment name] -d [/path/to/models] -i [/path/to/migrations] -m [model-name]  
 
 ## Example
     sequelize-automatic-migrations -c ./config/database.json -e development -i ./db/migrate -d ./models -m User
