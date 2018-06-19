@@ -11,7 +11,9 @@
     "url": "git+https://github.com/AlexHladin/sequelize-automatic-migrations.git"
   },
   "keywords": [
-    "sequelize"
+    "sequelize",
+    "migration",
+    "nodejs"
   ],
   "author": "Alex Gladin <alexgladin17@gmail.com>",
   "license": "MIT",
